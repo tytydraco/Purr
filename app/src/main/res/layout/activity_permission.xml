@@ -42,6 +42,7 @@
         <ProgressBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
+            android:layout_marginHorizontal="64dp"
+            style="@style/ProgressBar.Horizontal.Small" />
     </LinearLayout>
 </RelativeLayout>
