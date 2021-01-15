@@ -15,13 +15,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         resSlider = findViewById(R.id.res_slider)
-        
+
         resSlider.addOnSliderTouchListener(object : Slider.OnSliderTouchListener {
             override fun onStartTrackingTouch(slider: Slider) {}
 
             override fun onStopTrackingTouch(slider: Slider) {
-                val newResolution = viewModel.scaleResolution(slider.value / 100f)
-                viewModel.wm.setResolution(newResolution.width, newResolution.height)
+                val newResolution = viewModel.resolutionUtils.scaleResolution(slider.value)
+                viewModel.setResolutionAndDensity(newResolution)
             }
         })
     }
