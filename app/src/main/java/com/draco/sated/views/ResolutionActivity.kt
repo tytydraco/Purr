@@ -44,14 +44,22 @@ class ResolutionActivity : AppCompatActivity() {
         }
 
         resSlider.addOnSliderTouchListener(object : Slider.OnSliderTouchListener {
-            override fun onStartTrackingTouch(slider: Slider) {}
+            var initialValue = 0f
+            override fun onStartTrackingTouch(slider: Slider) {
+                initialValue = slider.value
+            }
+
             override fun onStopTrackingTouch(slider: Slider) {
+                if (slider.value == initialValue)
+                    return
+
                 viewModel.scaleDisplay(slider.value)
 
-                if (slider.value != 100f) {
-                    val intent = Intent(this@ResolutionActivity, VerifyActivity::class.java)
-                    startActivity(intent)
-                }
+                if (slider.value == 100f)
+                    return
+
+                val intent = Intent(this@ResolutionActivity, VerifyActivity::class.java)
+                startActivity(intent)
             }
         })
     }
