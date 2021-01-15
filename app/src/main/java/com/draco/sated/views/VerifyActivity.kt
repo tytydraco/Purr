@@ -61,7 +61,7 @@ class VerifyActivity : AppCompatActivity() {
         /* Close activity only if user ticks all four boxes */
         verifyBoxes.forEach {
             it.setOnCheckedChangeListener { _, _ ->
-                it.isEnabled = false
+                it.isClickable = false
                 verifySum += 1
 
                 if (verifySum == 4)
