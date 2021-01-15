@@ -16,15 +16,18 @@ class ResolutionActivityViewModel(application: Application) : AndroidViewModel(a
         if (scale == 100f)
             return "Default"
 
-        val newResolution = resolutionUtils.scaleResolution(
+        val resolution = resolutionUtils.scaleResolution(
             resolutionUtils.realResolution,
             scale
         )
-        return "${newResolution.width}x${newResolution.height}"
+        return "${resolution.width}x${resolution.height}"
     }
 
     fun scaleDisplay(scale: Float) {
-        val resolution = resolutionUtils.scaleResolution(resolutionUtils.realResolution, scale)
+        val resolution = resolutionUtils.scaleResolution(
+            resolutionUtils.realResolution,
+            scale
+        )
         wm.setResolution(resolution.width, resolution.height)
         wm.setDisplayDensity(resolutionUtils.getDPI(resolution))
     }

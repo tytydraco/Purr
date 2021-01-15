@@ -48,8 +48,10 @@ class ResolutionActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(slider: Slider) {
                 viewModel.scaleDisplay(slider.value)
 
-                val intent = Intent(this@ResolutionActivity, VerifyActivity::class.java)
-                startActivity(intent)
+                if (slider.value != 100f) {
+                    val intent = Intent(this@ResolutionActivity, VerifyActivity::class.java)
+                    startActivity(intent)
+                }
             }
         })
     }
