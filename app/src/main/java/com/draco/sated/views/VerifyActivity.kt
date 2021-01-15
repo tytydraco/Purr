@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.view.animation.DecelerateInterpolator
+import android.view.animation.LinearInterpolator
 import android.widget.CheckBox
 import android.widget.ProgressBar
 import androidx.activity.viewModels
@@ -35,7 +36,7 @@ class VerifyActivity : AppCompatActivity() {
         ObjectAnimator.ofInt(progress, "progress", progress.progress, progress.max)
             .setDuration(15 * 1000)
             .also {
-                it.interpolator = DecelerateInterpolator()
+                it.interpolator = LinearInterpolator()
                 it.addListener(object : Animator.AnimatorListener {
                     override fun onAnimationStart(animation: Animator?) {}
                     override fun onAnimationCancel(animation: Animator?) {}
