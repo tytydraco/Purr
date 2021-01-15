@@ -13,6 +13,9 @@ class ResolutionActivityViewModel(application: Application) : AndroidViewModel(a
     private val resolutionUtils = ResolutionUtils(wm)
 
     fun getResolutionLabel(scale: Float): String {
+        if (scale == 100f)
+            return "Default"
+
         val newResolution = resolutionUtils.scaleResolution(
             resolutionUtils.realResolution,
             scale
