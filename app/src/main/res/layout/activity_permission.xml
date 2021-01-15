@@ -18,16 +18,14 @@
             android:paddingVertical="32dp"
             style="@style/TextAppearance.MaterialComponents.Headline5"
             android:text="@string/permission_message" />
-    </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/command"
-        android:layout_centerInParent="true"
-        android:fontFamily="monospace"
-        android:textAlignment="center"
-        android:text="@string/permission_command" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/command"
+            android:fontFamily="monospace"
+            android:text="@string/permission_command" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
