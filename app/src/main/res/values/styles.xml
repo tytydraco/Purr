@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ShapeAppearanceOverlay.SATED.Round" parent="">
+        <item name="cornerSize">10%</item>
+    </style>
+</resources>

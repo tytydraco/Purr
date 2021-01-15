@@ -13,4 +13,6 @@ object IWindowManager {
     const val setForcedDisplayDensityForUser = "setForcedDisplayDensityForUser"
     const val clearForcedDisplayDensity = "clearForcedDisplayDensity"
     const val clearForcedDisplayDensityForUser = "clearForcedDisplayDensityForUser"
+    const val getInitialDisplaySize = "getInitialDisplaySize"
+    const val getInitialDisplayDensity = "getInitialDisplayDensity"
 }

@@ -2,10 +2,13 @@ package com.draco.sated.utils
 
 import android.annotation.SuppressLint
 import android.content.ContentResolver
+import android.graphics.Point
+import android.os.Build
 import android.provider.Settings
 import android.view.Display
 import com.draco.sated.models.IWindowManager
 import com.draco.sated.models.WindowManagerGlobal
+import java.lang.Exception
 
 @SuppressLint("PrivateApi")
 class WM(contentResolver: ContentResolver) {
@@ -22,19 +25,17 @@ class WM(contentResolver: ContentResolver) {
     /**
      * IWindowManager instance
      */
-    private val iWindowManager: IWindowManager
+    private val iWindowManager: Any
 
     init {
         /* Unblock private APIs */
-        for (key in GLOBAL_SETTINGS_BLACKLIST_KEYS) {
-            if (Settings.Global.getInt(contentResolver, key) != 1)
+        for (key in GLOBAL_SETTINGS_BLACKLIST_KEYS)
                 Settings.Global.putInt(contentResolver, key, 1)
-        }
 
         /* Resolve window manager */
         iWindowManager = Class.forName(WindowManagerGlobal.className)
             .getMethod(WindowManagerGlobal.getWindowManagerService)
-            .invoke(null) as IWindowManager
+            .invoke(null)!!
     }
 
     /**
@@ -57,6 +58,26 @@ class WM(contentResolver: ContentResolver) {
     }
 
     /**
+     * Return real display size
+     */
+    fun getRealResolution(): Point {
+        val point = Point()
+        Class.forName(IWindowManager.className)
+            .getMethod(
+                IWindowManager.getInitialDisplaySize,
+                Int::class.javaPrimitiveType,
+                Point::class.javaObjectType
+            )
+            .invoke(
+                iWindowManager,
+                Display.DEFAULT_DISPLAY,
+                point
+            )
+
+        return point
+    }
+
+    /**
      * Clear display resolution
      */
     fun clearResolution() {
@@ -75,57 +96,74 @@ class WM(contentResolver: ContentResolver) {
      * Set display density
      */
     fun setDisplayDensity(density: Int) {
-        Class.forName(IWindowManager.className)
-            .getMethod(
-                IWindowManager.setForcedDisplayDensity,
-                Int::class.javaPrimitiveType,
-                Int::class.javaPrimitiveType
-            )
-            .invoke(
-                iWindowManager,
-                Display.DEFAULT_DISPLAY,
-                density
-            )
-
-        Class.forName(IWindowManager.className)
-            .getMethod(
-                IWindowManager.setForcedDisplayDensityForUser,
-                Int::class.javaPrimitiveType,
-                Int::class.javaPrimitiveType,
-                Int::class.javaPrimitiveType
-            )
-            .invoke(
-                iWindowManager,
-                Display.DEFAULT_DISPLAY,
-                density,
-                USER_ID
-            )
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N_MR1)
+            Class.forName(IWindowManager.className)
+                .getMethod(
+                    IWindowManager.setForcedDisplayDensity,
+                    Int::class.javaPrimitiveType,
+                    Int::class.javaPrimitiveType
+                )
+                .invoke(
+                    iWindowManager,
+                    Display.DEFAULT_DISPLAY,
+                    density
+                )
+        else
+            Class.forName(IWindowManager.className)
+                .getMethod(
+                    IWindowManager.setForcedDisplayDensityForUser,
+                    Int::class.javaPrimitiveType,
+                    Int::class.javaPrimitiveType,
+                    Int::class.javaPrimitiveType
+                )
+                .invoke(
+                    iWindowManager,
+                    Display.DEFAULT_DISPLAY,
+                    density,
+                    USER_ID
+                )
     }
 
     /**
      * Clear display density
      */
     fun clearDisplayDensity() {
-        Class.forName(IWindowManager.className)
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N_MR1)
+            Class.forName(IWindowManager.className)
+                .getMethod(
+                    IWindowManager.clearForcedDisplayDensity,
+                    Int::class.javaPrimitiveType
+                )
+                .invoke(
+                    iWindowManager,
+                    Display.DEFAULT_DISPLAY
+                )
+        else
+            Class.forName(IWindowManager.className)
+                .getMethod(
+                    IWindowManager.clearForcedDisplayDensityForUser,
+                    Int::class.javaPrimitiveType,
+                    Int::class.javaPrimitiveType
+                )
+                .invoke(
+                    iWindowManager,
+                    Display.DEFAULT_DISPLAY,
+                    USER_ID
+                )
+    }
+
+    /**
+     * Return real display size
+     */
+    fun getRealDensity(): Int {
+        return Class.forName(IWindowManager.className)
             .getMethod(
-                IWindowManager.clearForcedDisplayDensity,
+                IWindowManager.getInitialDisplayDensity,
                 Int::class.javaPrimitiveType
             )
             .invoke(
                 iWindowManager,
                 Display.DEFAULT_DISPLAY
-            )
-
-        Class.forName(IWindowManager.className)
-            .getMethod(
-                IWindowManager.clearForcedDisplayDensityForUser,
-                Int::class.javaPrimitiveType,
-                Int::class.javaPrimitiveType
-            )
-            .invoke(
-                iWindowManager,
-                Display.DEFAULT_DISPLAY,
-                USER_ID
-            )
+            ) as Int
     }
 }
