@@ -18,6 +18,6 @@
         android:id="@+id/res_slider"
         android:valueFrom="25"
         android:valueTo="100"
-        android:stepSize="1"
+        android:stepSize="5"
         android:value="100" />
 </LinearLayout>

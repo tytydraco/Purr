@@ -35,40 +35,46 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        android:orientation="vertical">
-        <TextView
+        android:layout_height="match_parent"
+        android:layout_margin="24dp">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/TextAppearance.MaterialComponents.Headline2"
-            android:text="@string/verify_title" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="32dp"
-            style="@style/TextAppearance.MaterialComponents.Headline5"
-            android:text="@string/verify_message" />
-    </LinearLayout>
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.MaterialComponents.Headline2"
+                android:text="@string/verify_title" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="32dp"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:text="@string/verify_message" />
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="24dp">
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="24dp"
-            style="@style/TextAppearance.MaterialComponents.Caption"
-            android:text="@string/check_all_boxes" />
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_alignParentBottom="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="12dp"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:text="@string/check_all_boxes" />
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="10000"
+                android:id="@+id/progress"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
+        </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

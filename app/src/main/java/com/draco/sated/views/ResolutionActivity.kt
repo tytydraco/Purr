@@ -1,5 +1,6 @@
 package com.draco.sated.views
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.activity.viewModels
@@ -46,6 +47,9 @@ class ResolutionActivity : AppCompatActivity() {
             override fun onStartTrackingTouch(slider: Slider) {}
             override fun onStopTrackingTouch(slider: Slider) {
                 viewModel.scaleDisplay(slider.value)
+
+                val intent = Intent(this@ResolutionActivity, VerifyActivity::class.java)
+                startActivity(intent)
             }
         })
     }
