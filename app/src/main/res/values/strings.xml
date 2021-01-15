@@ -36,6 +36,10 @@
     <string name="pref_custom_resolution_summary">Specify a custom display resolution</string>
     <string name="pref_custom_resolution_key">custom_resolution</string>
 
+    <string name="pref_verify_title">Verify resolutions</string>
+    <string name="pref_verify_summary">Show a verification screen when switching resolutions</string>
+    <string name="pref_verify_key">verify</string>
+
     <string name="pref_developer_title">Developer</string>
     <string name="pref_developer_summary">Tyler Nijmeh</string>
     <string name="pref_developer_key">developer</string>

@@ -1,6 +1,7 @@
 package com.draco.sated.views
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -8,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
+import androidx.preference.PreferenceManager
 import com.bumptech.glide.Glide
 import com.draco.sated.R
 import com.draco.sated.viewmodels.ResolutionActivityViewModel
@@ -21,9 +23,13 @@ class ResolutionActivity : AppCompatActivity() {
     private lateinit var sampleImage: ImageView
     private lateinit var resSlider: Slider
 
+    private lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resolution)
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
 
         settings = findViewById(R.id.settings)
         sampleImage = findViewById(R.id.sample_image)
@@ -56,7 +62,7 @@ class ResolutionActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(slider: Slider) {
                 viewModel.scaleDisplay(slider.value)
 
-                if (slider.value != 100f) {
+                if (sharedPreferences.getBoolean(getString(R.string.pref_verify_key), true) && slider.value != 100f) {
                     val intent = Intent(this@ResolutionActivity, VerifyActivity::class.java)
                     startActivity(intent)
                 }

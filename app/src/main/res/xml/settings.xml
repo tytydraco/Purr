@@ -11,6 +11,12 @@
             android:summary="@string/pref_custom_resolution_summary"
             android:key="@string/pref_custom_resolution_key"
             android:icon="@drawable/ic_baseline_edit_24" />
+        <SwitchPreference
+            android:title="@string/pref_verify_title"
+            android:summary="@string/pref_verify_summary"
+            android:key="@string/pref_verify_key"
+            android:icon="@drawable/ic_baseline_verified_24"
+            android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/about">
         <Preference
