@@ -12,9 +12,33 @@
     <string name="verify_message">Let\'s see if this resolution is compatible with your display. Tick all of the boxes in the corners of the screen to continue.</string>
 
     <string name="settings">Settings</string>
+    <string name="about">About</string>
+
     <string name="copied">Copied to clipboard</string>
     <string name="please_wait">Waiting for permission</string>
     <string name="check_all_boxes">Check all boxes to proceed</string>
 
     <string name="sample_image">Sample image</string>
+
+    <string name="snackbar_intent_failed">Could not handle this action</string>
+
+    <string name="developer_url">https://www.github.com/tytydraco</string>
+    <string name="source_url">https://www.github.com/tytydraco/SATED</string>
+    <string name="contact_url">mailto:tylernij@gmail.com</string>
+
+    <string name="pref_developer_title">Developer</string>
+    <string name="pref_developer_summary">Tyler Nijmeh</string>
+    <string name="pref_developer_key">developer</string>
+
+    <string name="pref_source_title">Source code</string>
+    <string name="pref_source_summary">Check out this project on GitHub</string>
+    <string name="pref_source_key">source</string>
+
+    <string name="pref_contact_title">Contact</string>
+    <string name="pref_contact_summary">Email me with questions, comments, and concerns</string>
+    <string name="pref_contact_key">contact</string>
+
+    <string name="pref_licenses_title">Licenses</string>
+    <string name="pref_licenses_summary">View the open source licenses</string>
+    <string name="pref_licenses_key">licenses</string>
 </resources>

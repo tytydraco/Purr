@@ -3,4 +3,26 @@
     <PreferenceCategory android:title="@string/settings">
 
     </PreferenceCategory>
+    <PreferenceCategory android:title="@string/about">
+        <Preference
+            android:title="@string/pref_developer_title"
+            android:summary="@string/pref_developer_summary"
+            android:key="@string/pref_developer_key"
+            android:icon="@drawable/ic_baseline_person_pin_24" />
+        <Preference
+            android:title="@string/pref_source_title"
+            android:summary="@string/pref_source_summary"
+            android:key="@string/pref_source_key"
+            android:icon="@drawable/ic_baseline_code_24" />
+        <Preference
+            android:title="@string/pref_contact_title"
+            android:summary="@string/pref_contact_summary"
+            android:key="@string/pref_contact_key"
+            android:icon="@drawable/ic_baseline_email_24" />
+        <Preference
+            android:title="@string/pref_licenses_title"
+            android:summary="@string/pref_licenses_summary"
+            android:key="@string/pref_licenses_key"
+            android:icon="@drawable/ic_baseline_insert_drive_file_24" />
+    </PreferenceCategory>
 </PreferenceScreen>
