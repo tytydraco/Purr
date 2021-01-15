@@ -8,7 +8,7 @@ import com.draco.sated.models.IWindowManager
 import com.draco.sated.models.WindowManagerGlobal
 
 @SuppressLint("PrivateApi")
-class WM(private val contentResolver: ContentResolver) {
+class WM(contentResolver: ContentResolver) {
     companion object {
         const val USER_ID = -3
 
