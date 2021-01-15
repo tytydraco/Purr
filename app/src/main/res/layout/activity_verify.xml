@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="64dp"
                 android:max="10000"
-                style="@style/ProgressBar.Horizontal.Small"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                 android:id="@+id/progress" />
         </LinearLayout>
     </RelativeLayout>
