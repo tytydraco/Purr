@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.draco.sated.R
 import com.draco.sated.viewmodels.PermissionActivityViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -44,7 +43,7 @@ class PermissionActivity : AppCompatActivity() {
     }
 
     private fun startMainActivity() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, ResolutionActivity::class.java)
         startActivity(intent)
     }
 }

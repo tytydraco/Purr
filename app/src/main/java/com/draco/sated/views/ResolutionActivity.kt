@@ -1,7 +1,6 @@
 package com.draco.sated.views
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -9,14 +8,12 @@ import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import com.bumptech.glide.Glide
 import com.draco.sated.R
-import com.draco.sated.models.Resolution
-import com.draco.sated.viewmodels.MainActivityViewModel
-import com.google.android.material.slider.LabelFormatter
+import com.draco.sated.viewmodels.ResolutionActivityViewModel
 import com.google.android.material.slider.Slider
 import kotlin.math.roundToInt
 
-class MainActivity : AppCompatActivity() {
-    private val viewModel: MainActivityViewModel by viewModels()
+class ResolutionActivity : AppCompatActivity() {
+    private val viewModel: ResolutionActivityViewModel by viewModels()
 
     private lateinit var sampleImage: ImageView
     private lateinit var resSlider: Slider

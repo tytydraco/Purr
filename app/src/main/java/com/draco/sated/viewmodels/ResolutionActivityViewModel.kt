@@ -7,7 +7,7 @@ import com.draco.sated.utils.ResolutionUtils
 import com.draco.sated.utils.WM
 import kotlin.math.roundToInt
 
-class MainActivityViewModel(application: Application) : AndroidViewModel(application) {
+class ResolutionActivityViewModel(application: Application) : AndroidViewModel(application) {
     private val context = application.applicationContext
     private val wm = WM(context.contentResolver)
     private val resolutionUtils = ResolutionUtils(wm)

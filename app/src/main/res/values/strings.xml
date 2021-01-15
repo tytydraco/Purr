@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SATED</string>
+
+    <string name="permission_title">Woah there!</string>
+    <string name="permission_message">We need a special permission to continue. Use ADB to run the following command:</string>
+    <string name="permission_command">adb shell pm grant com.draco.sated android.permission.WRITE_SECURE_SETTINGS</string>
+
+    <string name="verify_title">Looks good?</string>
+    <string name="verify_message">Let\'s see if this resolution is compatible with your display. Tick all of the boxes in the corners of the screen to continue.</string>
+
+    <string name="copied">Copied to clipboard</string>
+    <string name="please_wait">Waiting for permission</string>
+    <string name="proceed">Proceed</string>
+    <string name="check_all_boxes">Check all boxes to continue</string>
+
+    <string name="sample_image">Sample image</string>
+</resources>
