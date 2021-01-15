@@ -11,6 +11,7 @@
     <string name="verify_title">Looks good?</string>
     <string name="verify_message">Let\'s see if this resolution is compatible with your display. Tick all of the boxes in the corners of the screen to continue.</string>
 
+    <string name="settings">Settings</string>
     <string name="copied">Copied to clipboard</string>
     <string name="please_wait">Waiting for permission</string>
     <string name="check_all_boxes">Check all boxes to proceed</string>

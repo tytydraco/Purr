@@ -2,6 +2,7 @@ package com.draco.sated.views
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -16,15 +17,22 @@ import kotlin.math.roundToInt
 class ResolutionActivity : AppCompatActivity() {
     private val viewModel: ResolutionActivityViewModel by viewModels()
 
+    private lateinit var settings: ImageButton
     private lateinit var sampleImage: ImageView
     private lateinit var resSlider: Slider
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_resolution)
 
+        settings = findViewById(R.id.settings)
         sampleImage = findViewById(R.id.sample_image)
         resSlider = findViewById(R.id.res_slider)
+
+        settings.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
 
         resSlider.setLabelFormatter {
             viewModel.getResolutionLabel(it)
