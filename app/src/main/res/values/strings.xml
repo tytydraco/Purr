@@ -5,6 +5,9 @@
     <string name="permission_message">We need a special permission to continue. Use ADB to run the following command:</string>
     <string name="permission_command">adb shell pm grant com.draco.sated android.permission.WRITE_SECURE_SETTINGS</string>
 
+    <string name="resolution_title">Resolutions</string>
+    <string name="resolution_message">Scale your display here to give your poor GPU a break.</string>
+
     <string name="verify_title">Looks good?</string>
     <string name="verify_message">Let\'s see if this resolution is compatible with your display. Tick all of the boxes in the corners of the screen to continue.</string>
 
