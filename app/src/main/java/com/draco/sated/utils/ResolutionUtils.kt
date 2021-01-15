@@ -6,7 +6,7 @@ import kotlin.math.roundToInt
 import kotlin.math.sqrt
 
 class ResolutionUtils(wm: WM) {
-    private val realResolution = with(wm.getRealResolution()) {
+    val realResolution = with(wm.getRealResolution()) {
         Resolution(x, y)
     }
 
@@ -36,11 +36,11 @@ class ResolutionUtils(wm: WM) {
     /**
      * Given a percentage, calculate a scaled resolution
      */
-    fun scaleResolution(percent: Float): Resolution {
+    fun scaleResolution(resolution: Resolution, percent: Float): Resolution {
         val scale = percent / 100f
         return Resolution(
-            (realResolution.width * scale).roundToInt(),
-            (realResolution.height * scale).roundToInt()
+            (resolution.width * scale).roundToInt(),
+            (resolution.height * scale).roundToInt()
         )
     }
 }

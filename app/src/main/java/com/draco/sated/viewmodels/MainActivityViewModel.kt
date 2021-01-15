@@ -9,10 +9,19 @@ import kotlin.math.roundToInt
 
 class MainActivityViewModel(application: Application) : AndroidViewModel(application) {
     private val context = application.applicationContext
-    val wm = WM(context.contentResolver)
-    val resolutionUtils = ResolutionUtils(wm)
+    private val wm = WM(context.contentResolver)
+    private val resolutionUtils = ResolutionUtils(wm)
 
-    fun setResolutionAndDensity(resolution: Resolution) {
+    fun getResolutionLabel(scale: Float): String {
+        val newResolution = resolutionUtils.scaleResolution(
+            resolutionUtils.realResolution,
+            scale
+        )
+        return "${newResolution.width}x${newResolution.height}"
+    }
+
+    fun scaleDisplay(scale: Float) {
+        val resolution = resolutionUtils.scaleResolution(resolutionUtils.realResolution, scale)
         wm.setResolution(resolution.width, resolution.height)
         wm.setDisplayDensity(resolutionUtils.getDPI(resolution))
     }
