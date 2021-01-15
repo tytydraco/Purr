@@ -8,7 +8,6 @@ import android.provider.Settings
 import android.view.Display
 import com.draco.sated.models.IWindowManager
 import com.draco.sated.models.WindowManagerGlobal
-import java.lang.Exception
 
 @SuppressLint("PrivateApi")
 class WM(contentResolver: ContentResolver) {

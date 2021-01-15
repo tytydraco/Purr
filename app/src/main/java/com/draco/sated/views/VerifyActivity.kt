@@ -3,7 +3,6 @@ package com.draco.sated.views
 import android.animation.Animator
 import android.animation.ObjectAnimator
 import android.os.Bundle
-import android.view.animation.DecelerateInterpolator
 import android.view.animation.LinearInterpolator
 import android.widget.CheckBox
 import android.widget.ProgressBar
@@ -50,7 +49,7 @@ class VerifyActivity : AppCompatActivity() {
                 })
             }
             .start()
-        
+
         /* Close activity only if user ticks all four boxes */
         listOf(
             verifyBox1,

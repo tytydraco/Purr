@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <style name="Theme.SATED" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/green</item>
         <item name="colorSecondary">@color/green</item>
