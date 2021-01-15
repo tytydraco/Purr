@@ -50,16 +50,14 @@ class VerifyActivity : AppCompatActivity() {
                 })
             }
             .start()
-
-        val verifyBoxes = listOf(
+        
+        /* Close activity only if user ticks all four boxes */
+        listOf(
             verifyBox1,
             verifyBox2,
             verifyBox3,
             verifyBox4
-        )
-
-        /* Close activity only if user ticks all four boxes */
-        verifyBoxes.forEach {
+        ).forEach {
             it.setOnCheckedChangeListener { _, _ ->
                 it.isClickable = false
                 verifySum += 1
