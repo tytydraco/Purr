@@ -16,6 +16,16 @@ class PermissionActivityViewModel(application: Application) : AndroidViewModel(a
     private val _permissionGranted = MutableLiveData(false)
     val permissionGranted: LiveData<Boolean> = _permissionGranted
 
+    fun askRootPermission() {
+        try {
+            ProcessBuilder(
+                "su",
+                "-c",
+                "pm grant com.draco.purr android.permission.WRITE_SECURE_SETTINGS"
+            ).start()
+        } catch (_: Exception) {}
+    }
+
     fun isPermissionsGranted(): Boolean {
         return context.checkSelfPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) ==
             PackageManager.PERMISSION_GRANTED
