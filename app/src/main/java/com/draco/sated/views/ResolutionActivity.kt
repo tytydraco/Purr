@@ -52,7 +52,12 @@ class ResolutionActivity : AppCompatActivity() {
             Glide
                 .with(this)
                 .load(R.drawable.sample)
-                .placeholder(sampleImage.drawable)
+                .apply {
+                    if (sampleImage.drawable != null)
+                        placeholder(sampleImage.drawable)
+                    else
+                        placeholder(R.drawable.sample)
+                }
                 .override(resolution.width, resolution.height)
                 .fitCenter()
                 .into(sampleImage)

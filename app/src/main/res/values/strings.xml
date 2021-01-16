@@ -11,7 +11,7 @@
     <string name="resolution_title">Resolution</string>
     <string name="resolution_message">Scale your display here to give your poor GPU a break.</string>
 
-    <string name="verify_title">Done!</string>
+    <string name="verify_title">Neat!</string>
     <string name="verify_message">Let\'s see if this resolution is compatible with your display. Tick all of the boxes in the corners of the screen to continue.</string>
 
     <string name="settings">Settings</string>
