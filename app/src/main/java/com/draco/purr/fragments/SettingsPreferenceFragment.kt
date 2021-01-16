@@ -45,7 +45,7 @@ class SettingsPreferenceFragment : PreferenceFragmentCompat() {
             .setView(R.layout.dialog_custom_resolution)
             .create()
             .also {
-                it.setButton(AlertDialog.BUTTON_POSITIVE, "Ok") { _, _ ->
+                it.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.apply)) { _, _ ->
                     val width = it.findViewById<EditText>(R.id.width)!!.text.toString()
                     val height = it.findViewById<EditText>(R.id.height)!!.text.toString()
                     if (viewModel.applyResolutionStrings(width, height)) {

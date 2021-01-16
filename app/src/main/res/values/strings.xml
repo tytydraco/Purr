@@ -19,6 +19,7 @@
     <string name="width">Width</string>
     <string name="height">Height</string>
     <string name="back">Go back!</string>
+    <string name="apply">Apply</string>
     <string name="copied">Copied to clipboard</string>
     <string name="please_wait">Waiting for permission</string>
     <string name="check_all_boxes">Check all boxes to proceed</string>
