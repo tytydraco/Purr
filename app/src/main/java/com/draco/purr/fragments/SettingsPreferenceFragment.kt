@@ -1,13 +1,16 @@
 package com.draco.purr.fragments
 
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.widget.EditText
 import androidx.fragment.app.viewModels
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.PreferenceManager
 import com.draco.purr.R
 import com.draco.purr.viewmodels.SettingsPreferenceFragmentViewModel
 import com.draco.purr.views.VerifyActivity
@@ -17,6 +20,12 @@ import com.google.android.material.snackbar.Snackbar
 
 class SettingsPreferenceFragment : PreferenceFragmentCompat() {
     private val viewModel: SettingsPreferenceFragmentViewModel by viewModels()
+    private lateinit var sharedPreferences: SharedPreferences
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+    }
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.settings, rootKey)
@@ -48,7 +57,9 @@ class SettingsPreferenceFragment : PreferenceFragmentCompat() {
                 it.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.apply)) { _, _ ->
                     val width = it.findViewById<EditText>(R.id.width)!!.text.toString()
                     val height = it.findViewById<EditText>(R.id.height)!!.text.toString()
-                    if (viewModel.applyResolutionStrings(width, height)) {
+
+                    if (sharedPreferences.getBoolean(getString(R.string.pref_verify_key), true) &&
+                            viewModel.applyResolutionStrings(width, height)) {
                         val intent = Intent(requireContext(), VerifyActivity::class.java)
                         startActivity(intent)
                     }
