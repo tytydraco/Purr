@@ -15,13 +15,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingVertical="32dp"
+            android:layout_marginTop="32dp"
             style="@style/TextAppearance.MaterialComponents.Headline5"
             android:text="@string/permission_message" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:id="@+id/command"
             android:fontFamily="monospace"
             android:text="@string/permission_command" />
