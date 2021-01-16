@@ -17,7 +17,7 @@ class SettingsPreferenceFragmentViewModel(application: Application) : AndroidVie
         wm.clearDisplayDensity()
     }
 
-    fun applyResolutionStrings(width: String, height: String) {
+    fun applyResolutionStrings(width: String, height: String): Boolean {
         try {
             val widthInt = Integer.parseInt(width)
             val heightInt = Integer.parseInt(height)
@@ -27,6 +27,9 @@ class SettingsPreferenceFragmentViewModel(application: Application) : AndroidVie
             wm.setDisplayDensity(dpi)
         } catch (e: Exception) {
             e.printStackTrace()
+            return false
         }
+
+        return true
     }
 }

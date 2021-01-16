@@ -48,10 +48,10 @@ class SettingsPreferenceFragment : PreferenceFragmentCompat() {
                 it.setButton(AlertDialog.BUTTON_POSITIVE, "Ok") { _, _ ->
                     val width = it.findViewById<EditText>(R.id.width)!!.text.toString()
                     val height = it.findViewById<EditText>(R.id.height)!!.text.toString()
-                    viewModel.applyResolutionStrings(width, height)
-
-                    val intent = Intent(requireContext(), VerifyActivity::class.java)
-                    startActivity(intent)
+                    if (viewModel.applyResolutionStrings(width, height)) {
+                        val intent = Intent(requireContext(), VerifyActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             }
             .show()
