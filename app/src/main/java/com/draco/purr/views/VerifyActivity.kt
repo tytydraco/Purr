@@ -43,7 +43,7 @@ class VerifyActivity : AppCompatActivity() {
         verifyBox4 = findViewById(R.id.verify_4)
         back = findViewById(R.id.back)
         progress = findViewById(R.id.progress)
-        
+
         back.setOnClickListener {
             undoResolution()
         }
