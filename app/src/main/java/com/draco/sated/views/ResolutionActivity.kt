@@ -3,8 +3,11 @@ package com.draco.sated.views
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
+import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -44,16 +47,13 @@ class ResolutionActivity : AppCompatActivity() {
             viewModel.getResolutionLabel(it)
         }
 
-        val bitmap = ContextCompat.getDrawable(this, R.drawable.sample)!!.toBitmap()
         resSlider.addOnChangeListener { _, value, _ ->
+            val resolution = viewModel.getResolution(value)
             Glide
                 .with(this)
                 .load(R.drawable.sample)
-                .placeholder(R.drawable.sample)
-                .override(
-                    (bitmap.width * (value / 100f)).roundToInt(),
-                    (bitmap.height * (value / 100f)).roundToInt(),
-                )
+                .override(resolution.width, resolution.height)
+                .fitCenter()
                 .into(sampleImage)
         }
 

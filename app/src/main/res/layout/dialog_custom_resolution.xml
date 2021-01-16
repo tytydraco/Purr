@@ -2,11 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingTop="24dp">
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/width"
+        android:background="@null"
         android:textAlignment="center"
         android:layout_weight="0.5"
         android:autofillHints="@string/width"
@@ -16,6 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/height"
+        android:background="@null"
         android:textAlignment="center"
         android:layout_weight="0.5"
         android:autofillHints="@string/height"

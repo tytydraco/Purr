@@ -2,6 +2,7 @@ package com.draco.sated.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import com.draco.sated.models.Resolution
 import com.draco.sated.utils.ResolutionUtils
 import com.draco.sated.utils.WM
 
@@ -10,14 +11,19 @@ class ResolutionActivityViewModel(application: Application) : AndroidViewModel(a
     private val wm = WM(context.contentResolver)
     private val resolutionUtils = ResolutionUtils(wm)
 
-    fun getResolutionLabel(scale: Float): String {
-        if (scale == 100f)
-            return "Default"
-
+    fun getResolution(scale: Float): Resolution {
         val resolution = resolutionUtils.scaleResolution(
             resolutionUtils.realResolution,
             scale
         )
+        return Resolution(resolution.width, resolution.height)
+    }
+
+    fun getResolutionLabel(scale: Float): String {
+        if (scale == 100f)
+            return "Default"
+
+        val resolution = getResolution(scale)
         return "${resolution.width}x${resolution.height}"
     }
 
