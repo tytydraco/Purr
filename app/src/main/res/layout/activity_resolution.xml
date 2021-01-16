@@ -28,7 +28,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingVertical="32dp"
+            android:layout_marginTop="32dp"
             style="@style/TextAppearance.MaterialComponents.Headline5"
             android:text="@string/resolution_message" />
     </LinearLayout>
@@ -47,6 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/res_slider"
+        android:layout_marginHorizontal="12dp"
         android:layout_alignParentBottom="true"
         android:valueFrom="25"
         android:valueTo="100"
