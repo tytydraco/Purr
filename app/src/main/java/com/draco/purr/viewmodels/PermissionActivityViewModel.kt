@@ -40,7 +40,11 @@ class PermissionActivityViewModel(application: Application) : AndroidViewModel(a
     }
 
     init {
-        if (!isPermissionsGranted())
+        if (!isPermissionsGranted()) {
+            viewModelScope.launch(Dispatchers.IO) {
+                askRootPermission()
+            }
             startPermissionCheckLoop()
+        }
     }
 }
