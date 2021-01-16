@@ -14,6 +14,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.draco.purr.R
 import com.draco.purr.viewmodels.VerifyActivityViewModel
+import com.google.android.material.button.MaterialButton
 
 class VerifyActivity : AppCompatActivity() {
     private val viewModel: VerifyActivityViewModel by viewModels()
@@ -22,6 +23,7 @@ class VerifyActivity : AppCompatActivity() {
     private lateinit var verifyBox2: CheckBox
     private lateinit var verifyBox3: CheckBox
     private lateinit var verifyBox4: CheckBox
+    private lateinit var back: MaterialButton
     private lateinit var progress: ProgressBar
 
     private var verifySum = 0
@@ -39,10 +41,15 @@ class VerifyActivity : AppCompatActivity() {
         verifyBox2 = findViewById(R.id.verify_2)
         verifyBox3 = findViewById(R.id.verify_3)
         verifyBox4 = findViewById(R.id.verify_4)
+        back = findViewById(R.id.back)
         progress = findViewById(R.id.progress)
+        
+        back.setOnClickListener {
+            undoResolution()
+        }
 
         ObjectAnimator.ofInt(progress, "progress", progress.progress, progress.max)
-            .setDuration(15 * 1000)
+            .setDuration(10 * 1000)
             .also {
                 it.interpolator = LinearInterpolator()
                 it.addListener(object : Animator.AnimatorListener {
@@ -50,10 +57,8 @@ class VerifyActivity : AppCompatActivity() {
                     override fun onAnimationCancel(animation: Animator?) {}
                     override fun onAnimationRepeat(animation: Animator?) {}
                     override fun onAnimationEnd(animation: Animator?) {
-                        if (!this@VerifyActivity.isDestroyed) {
-                            viewModel.resetScale()
-                            finish()
-                        }
+                        if (!this@VerifyActivity.isDestroyed)
+                            undoResolution()
                     }
                 })
             }
@@ -91,6 +96,11 @@ class VerifyActivity : AppCompatActivity() {
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
                 View.SYSTEM_UI_FLAG_FULLSCREEN
         }
+    }
+
+    private fun undoResolution() {
+        viewModel.resetScale()
+        finish()
     }
 
     /* Disallow exit */
