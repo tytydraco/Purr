@@ -1,4 +1,4 @@
-package com.draco.sated.utils
+package com.draco.purr.utils
 
 import android.annotation.SuppressLint
 import android.content.ContentResolver
@@ -6,8 +6,8 @@ import android.graphics.Point
 import android.os.Build
 import android.provider.Settings
 import android.view.Display
-import com.draco.sated.models.IWindowManager
-import com.draco.sated.models.WindowManagerGlobal
+import com.draco.purr.models.IWindowManager
+import com.draco.purr.models.WindowManagerGlobal
 
 @SuppressLint("PrivateApi")
 class WM(contentResolver: ContentResolver) {

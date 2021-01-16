@@ -1,4 +1,4 @@
-package com.draco.sated.views
+package com.draco.purr.views
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -10,8 +10,8 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.draco.sated.R
-import com.draco.sated.viewmodels.PermissionActivityViewModel
+import com.draco.purr.R
+import com.draco.purr.viewmodels.PermissionActivityViewModel
 import com.google.android.material.snackbar.Snackbar
 
 class PermissionActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.draco.sated.views
+package com.draco.purr.views
 
 import android.animation.Animator
 import android.animation.ObjectAnimator
@@ -12,8 +12,8 @@ import android.widget.CheckBox
 import android.widget.ProgressBar
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.draco.sated.R
-import com.draco.sated.viewmodels.VerifyActivityViewModel
+import com.draco.purr.R
+import com.draco.purr.viewmodels.VerifyActivityViewModel
 
 class VerifyActivity : AppCompatActivity() {
     private val viewModel: VerifyActivityViewModel by viewModels()

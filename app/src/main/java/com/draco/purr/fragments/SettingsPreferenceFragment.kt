@@ -1,4 +1,4 @@
-package com.draco.sated.fragments
+package com.draco.purr.fragments
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -8,9 +8,9 @@ import android.widget.EditText
 import androidx.fragment.app.viewModels
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
-import com.draco.sated.R
-import com.draco.sated.viewmodels.SettingsPreferenceFragmentViewModel
-import com.draco.sated.views.VerifyActivity
+import com.draco.purr.R
+import com.draco.purr.viewmodels.SettingsPreferenceFragmentViewModel
+import com.draco.purr.views.VerifyActivity
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar

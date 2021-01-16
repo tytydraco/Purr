@@ -1,9 +1,9 @@
-package com.draco.sated.views
+package com.draco.purr.views
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.draco.sated.R
-import com.draco.sated.fragments.SettingsPreferenceFragment
+import com.draco.purr.R
+import com.draco.purr.fragments.SettingsPreferenceFragment
 
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.draco.sated">
+    package="com.draco.purr">
 
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
@@ -14,15 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SATED">
-        <activity android:name=".views.PermissionActivity">
+        <activity android:name="com.draco.purr.views.PermissionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.ResolutionActivity" />
-        <activity android:name=".views.VerifyActivity" />
-        <activity android:name=".views.SettingsActivity" />
+        <activity android:name="com.draco.purr.views.ResolutionActivity" />
+        <activity android:name="com.draco.purr.views.VerifyActivity" />
+        <activity android:name="com.draco.purr.views.SettingsActivity" />
     </application>
 
 </manifest>

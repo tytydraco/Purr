@@ -1,4 +1,4 @@
-package com.draco.sated.viewmodels
+package com.draco.purr.viewmodels
 
 import android.app.Application
 import android.content.pm.PackageManager

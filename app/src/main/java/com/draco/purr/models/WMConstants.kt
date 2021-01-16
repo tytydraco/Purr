@@ -1,4 +1,4 @@
-package com.draco.sated.models
+package com.draco.purr.models
 
 object WindowManagerGlobal {
     const val className = "android.view.WindowManagerGlobal"

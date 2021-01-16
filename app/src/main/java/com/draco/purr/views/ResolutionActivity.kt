@@ -1,4 +1,4 @@
-package com.draco.sated.views
+package com.draco.purr.views
 
 import android.content.Intent
 import android.content.SharedPreferences
@@ -9,8 +9,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import com.bumptech.glide.Glide
-import com.draco.sated.R
-import com.draco.sated.viewmodels.ResolutionActivityViewModel
+import com.draco.purr.R
+import com.draco.purr.viewmodels.ResolutionActivityViewModel
 import com.google.android.material.slider.Slider
 
 class ResolutionActivity : AppCompatActivity() {

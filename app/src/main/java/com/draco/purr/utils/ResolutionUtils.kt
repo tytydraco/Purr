@@ -1,6 +1,6 @@
-package com.draco.sated.utils
+package com.draco.purr.utils
 
-import com.draco.sated.models.Resolution
+import com.draco.purr.models.Resolution
 import kotlin.math.pow
 import kotlin.math.roundToInt
 import kotlin.math.sqrt

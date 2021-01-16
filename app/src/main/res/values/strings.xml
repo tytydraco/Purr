@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">SATED</string>
+    <string name="app_name">Purr</string>
 
     <string name="permission_title">Woah there!</string>
     <string name="permission_message">We need a special permission to continue. Use ADB to run the following command:</string>
-    <string name="permission_command">adb shell pm grant com.draco.sated android.permission.WRITE_SECURE_SETTINGS</string>
+    <string name="permission_command">adb shell pm grant com.draco.purr android.permission.WRITE_SECURE_SETTINGS</string>
 
     <string name="learn_more">Learn more</string>
 
@@ -28,7 +28,7 @@
 
     <string name="learn_more_url">https://www.xda-developers.com/install-adb-windows-macos-linux/</string>
     <string name="developer_url">https://www.github.com/tytydraco</string>
-    <string name="source_url">https://www.github.com/tytydraco/SATED</string>
+    <string name="source_url">https://www.github.com/tytydraco/Purr</string>
     <string name="contact_url">mailto:tylernij@gmail.com</string>
     <string name="sample_url">https://unsplash.com/photos/IuJc2qh2TcA</string>
 

@@ -1,4 +1,4 @@
-package com.draco.sated
+package com.draco.purr
 
 import org.junit.Test
 

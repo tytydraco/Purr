@@ -1,10 +1,10 @@
-package com.draco.sated.viewmodels
+package com.draco.purr.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import com.draco.sated.models.Resolution
-import com.draco.sated.utils.ResolutionUtils
-import com.draco.sated.utils.WM
+import com.draco.purr.models.Resolution
+import com.draco.purr.utils.ResolutionUtils
+import com.draco.purr.utils.WM
 import java.lang.Exception
 
 class SettingsPreferenceFragmentViewModel(application: Application) : AndroidViewModel(application) {
