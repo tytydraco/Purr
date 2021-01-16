@@ -26,6 +26,7 @@
     <string name="sample_image">Sample image</string>
 
     <string name="snackbar_intent_failed">Could not handle this action</string>
+    <string name="snackbar_api_error">Unsupported API call</string>
 
     <string name="learn_more_url">https://www.xda-developers.com/install-adb-windows-macos-linux/</string>
     <string name="developer_url">https://www.github.com/tytydraco</string>

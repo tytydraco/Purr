@@ -6,12 +6,15 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import com.bumptech.glide.Glide
 import com.draco.purr.R
 import com.draco.purr.viewmodels.ResolutionActivityViewModel
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.slider.Slider
+import com.google.android.material.snackbar.Snackbar
 
 class ResolutionActivity : AppCompatActivity() {
     private val viewModel: ResolutionActivityViewModel by viewModels()
@@ -60,7 +63,10 @@ class ResolutionActivity : AppCompatActivity() {
         resSlider.addOnSliderTouchListener(object : Slider.OnSliderTouchListener {
             override fun onStartTrackingTouch(slider: Slider) {}
             override fun onStopTrackingTouch(slider: Slider) {
-                viewModel.scaleDisplay(slider.value)
+                if (!viewModel.scaleDisplay(slider.value)) {
+                    Snackbar.make(slider, R.string.snackbar_api_error, Snackbar.LENGTH_SHORT).show()
+                    return
+                }
 
                 if (sharedPreferences.getBoolean(getString(R.string.pref_verify_key), true) && slider.value != 100f) {
                     val intent = Intent(this@ResolutionActivity, VerifyActivity::class.java)

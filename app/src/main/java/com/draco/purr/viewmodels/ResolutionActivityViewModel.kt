@@ -27,12 +27,20 @@ class ResolutionActivityViewModel(application: Application) : AndroidViewModel(a
         return "${resolution.width}x${resolution.height}"
     }
 
-    fun scaleDisplay(scale: Float) {
+    fun scaleDisplay(scale: Float): Boolean {
         val resolution = resolutionUtils.scaleResolution(
             resolutionUtils.realResolution,
             scale
         )
-        wm.setResolution(resolution.width, resolution.height)
-        wm.setDisplayDensity(resolutionUtils.getDPI(resolution))
+        
+        try {
+            wm.setResolution(resolution.width, resolution.height)
+            wm.setDisplayDensity(resolutionUtils.getDPI(resolution))
+        } catch (e: NoSuchMethodException) {
+            e.printStackTrace()
+            return false
+        }
+
+        return true
     }
 }
