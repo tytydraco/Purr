@@ -6,7 +6,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/learn_more"
-        android:contentDescription="@string/settings"
+        android:contentDescription="@string/learn_more"
         android:src="@drawable/ic_baseline_help_24"
         android:layout_alignParentEnd="true"
         android:layout_margin="8dp"

@@ -29,6 +29,7 @@ class SettingsPreferenceFragment : PreferenceFragmentCompat() {
             getString(R.string.pref_developer_key) -> openURL(getString(R.string.developer_url))
             getString(R.string.pref_source_key) -> openURL(getString(R.string.source_url))
             getString(R.string.pref_contact_key) -> openURL(getString(R.string.contact_url))
+            getString(R.string.pref_sample_key) -> openURL(getString(R.string.sample_url))
             getString(R.string.pref_licenses_key) -> {
                 val intent = Intent(requireContext(), OssLicensesMenuActivity::class.java)
                 startActivity(intent)

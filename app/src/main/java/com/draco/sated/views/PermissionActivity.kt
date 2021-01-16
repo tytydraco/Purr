@@ -6,7 +6,6 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.text.Html
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.viewModels

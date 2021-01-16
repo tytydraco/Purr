@@ -6,7 +6,6 @@
     <string name="permission_command">adb shell pm grant com.draco.sated android.permission.WRITE_SECURE_SETTINGS</string>
 
     <string name="learn_more">Learn more</string>
-    <string name="learn_more_url">https://www.xda-developers.com/install-adb-windows-macos-linux/</string>
 
     <string name="resolution_title">Resolution</string>
     <string name="resolution_message">Scale your display here to give your poor GPU a break.</string>
@@ -27,9 +26,11 @@
 
     <string name="snackbar_intent_failed">Could not handle this action</string>
 
+    <string name="learn_more_url">https://www.xda-developers.com/install-adb-windows-macos-linux/</string>
     <string name="developer_url">https://www.github.com/tytydraco</string>
     <string name="source_url">https://www.github.com/tytydraco/SATED</string>
     <string name="contact_url">mailto:tylernij@gmail.com</string>
+    <string name="sample_url">https://unsplash.com/photos/IuJc2qh2TcA</string>
 
     <string name="pref_reset_resolution_title">Reset display</string>
     <string name="pref_reset_resolution_summary">Restore the original display resolution and density</string>
@@ -54,6 +55,10 @@
     <string name="pref_contact_title">Contact</string>
     <string name="pref_contact_summary">Email me with questions, comments, and concerns</string>
     <string name="pref_contact_key">contact</string>
+
+    <string name="pref_sample_title">Sample image credits</string>
+    <string name="pref_sample_summary">Photo taken by Cédric VT uploaded to Unsplash</string>
+    <string name="pref_sample_key">sample</string>
 
     <string name="pref_licenses_title">Licenses</string>
     <string name="pref_licenses_summary">View the open source licenses</string>

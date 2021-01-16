@@ -35,6 +35,11 @@
             android:key="@string/pref_contact_key"
             android:icon="@drawable/ic_baseline_email_24" />
         <Preference
+            android:title="@string/pref_sample_title"
+            android:summary="@string/pref_sample_summary"
+            android:key="@string/pref_sample_key"
+            android:icon="@drawable/ic_baseline_photo_camera_24" />
+        <Preference
             android:title="@string/pref_licenses_title"
             android:summary="@string/pref_licenses_summary"
             android:key="@string/pref_licenses_key"

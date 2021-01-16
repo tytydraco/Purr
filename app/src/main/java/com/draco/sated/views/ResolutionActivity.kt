@@ -3,21 +3,15 @@ package com.draco.sated.views
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
-import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.RelativeLayout
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.toBitmap
 import androidx.preference.PreferenceManager
 import com.bumptech.glide.Glide
 import com.draco.sated.R
 import com.draco.sated.viewmodels.ResolutionActivityViewModel
 import com.google.android.material.slider.Slider
-import kotlin.math.roundToInt
 
 class ResolutionActivity : AppCompatActivity() {
     private val viewModel: ResolutionActivityViewModel by viewModels()
