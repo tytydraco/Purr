@@ -59,6 +59,7 @@ class PermissionActivity : AppCompatActivity() {
 
     private fun startMainActivity() {
         val intent = Intent(this, ResolutionActivity::class.java)
+            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         startActivity(intent)
     }
 }
