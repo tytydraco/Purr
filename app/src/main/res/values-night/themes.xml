@@ -1,5 +1,5 @@
 <resources>
-    <style name="Theme.SATED" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Purr" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@android:color/white</item>
         <item name="colorSecondary">@android:color/white</item>
 
