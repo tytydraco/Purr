@@ -2,6 +2,7 @@ package com.draco.purr.views
 
 import android.animation.Animator
 import android.animation.ObjectAnimator
+import android.app.Activity
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -75,8 +76,10 @@ class VerifyActivity : AppCompatActivity() {
                 it.isClickable = false
                 verifySum += 1
 
-                if (verifySum == 4)
+                if (verifySum == 4) {
+                    setResult(Activity.RESULT_OK)
                     finish()
+                }
             }
         }
     }
@@ -100,6 +103,7 @@ class VerifyActivity : AppCompatActivity() {
 
     private fun undoResolution() {
         viewModel.resetScale()
+        setResult(Activity.RESULT_CANCELED)
         finish()
     }
 

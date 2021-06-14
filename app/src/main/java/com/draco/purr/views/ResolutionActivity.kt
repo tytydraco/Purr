@@ -1,18 +1,18 @@
 package com.draco.purr.views
 
+import android.app.Activity
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import com.bumptech.glide.Glide
 import com.draco.purr.R
 import com.draco.purr.viewmodels.ResolutionActivityViewModel
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.slider.Slider
 import com.google.android.material.snackbar.Snackbar
 
@@ -24,6 +24,11 @@ class ResolutionActivity : AppCompatActivity() {
     private lateinit var resSlider: Slider
 
     private lateinit var sharedPreferences: SharedPreferences
+
+    val resolutionChangeCallback = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        if (it.resultCode == Activity.RESULT_CANCELED)
+            resSlider.value = 100f
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,7 +75,7 @@ class ResolutionActivity : AppCompatActivity() {
 
                 if (sharedPreferences.getBoolean(getString(R.string.pref_verify_key), true) && slider.value != 100f) {
                     val intent = Intent(this@ResolutionActivity, VerifyActivity::class.java)
-                    startActivity(intent)
+                    resolutionChangeCallback.launch(intent)
                 }
             }
         })
