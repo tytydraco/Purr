@@ -8,8 +8,7 @@ import com.draco.purr.utils.WM
 import java.lang.Exception
 
 class SettingsPreferenceFragmentViewModel(application: Application) : AndroidViewModel(application) {
-    private val context = application.applicationContext
-    private val wm = WM(context.contentResolver)
+    private val wm = WM(application.applicationContext.contentResolver)
     private val resolutionUtils = ResolutionUtils(wm)
 
     fun resetScale() {

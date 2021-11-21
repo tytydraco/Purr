@@ -7,8 +7,7 @@ import com.draco.purr.utils.ResolutionUtils
 import com.draco.purr.utils.WM
 
 class ResolutionActivityViewModel(application: Application) : AndroidViewModel(application) {
-    private val context = application.applicationContext
-    private val wm = WM(context.contentResolver)
+    private val wm = WM(application.applicationContext.contentResolver)
     private val resolutionUtils = ResolutionUtils(wm)
 
     fun getResolution(scale: Float): Resolution {

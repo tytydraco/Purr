@@ -5,8 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import com.draco.purr.utils.WM
 
 class VerifyActivityViewModel(application: Application) : AndroidViewModel(application) {
-    private val context = application.applicationContext
-    private val wm = WM(context.contentResolver)
+    private val wm = WM(application.applicationContext.contentResolver)
 
     fun resetScale() {
         wm.clearResolution()

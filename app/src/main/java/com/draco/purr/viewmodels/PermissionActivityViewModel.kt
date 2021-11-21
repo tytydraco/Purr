@@ -11,8 +11,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class PermissionActivityViewModel(application: Application) : AndroidViewModel(application) {
-    private val context = application.applicationContext
-
     private val _permissionGranted = MutableLiveData(false)
     val permissionGranted: LiveData<Boolean> = _permissionGranted
 
@@ -27,6 +25,7 @@ class PermissionActivityViewModel(application: Application) : AndroidViewModel(a
     }
 
     fun isPermissionsGranted(): Boolean {
+        val context = getApplication<Application>().applicationContext
         return context.checkSelfPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) ==
             PackageManager.PERMISSION_GRANTED
     }

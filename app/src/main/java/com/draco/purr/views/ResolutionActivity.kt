@@ -1,5 +1,6 @@
 package com.draco.purr.views
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.content.SharedPreferences
@@ -30,6 +31,7 @@ class ResolutionActivity : AppCompatActivity() {
             resSlider.value = 100f
     }
 
+    @SuppressLint("CheckResult")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resolution)
@@ -66,7 +68,9 @@ class ResolutionActivity : AppCompatActivity() {
         }
 
         resSlider.addOnSliderTouchListener(object : Slider.OnSliderTouchListener {
+            @SuppressLint("RestrictedApi")
             override fun onStartTrackingTouch(slider: Slider) {}
+            @SuppressLint("RestrictedApi")
             override fun onStopTrackingTouch(slider: Slider) {
                 if (!viewModel.scaleDisplay(slider.value)) {
                     Snackbar.make(slider, R.string.snackbar_api_error, Snackbar.LENGTH_SHORT).show()
