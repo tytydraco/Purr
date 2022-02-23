@@ -27,6 +27,7 @@
         <activity android:name="com.draco.purr.views.ResolutionActivity" />
         <activity android:name="com.draco.purr.views.VerifyActivity" />
         <activity android:name="com.draco.purr.views.SettingsActivity" />
+        <activity android:name="com.draco.purr.views.SavedActivity" />
     </application>
 
 </manifest>

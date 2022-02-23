@@ -11,6 +11,11 @@
             android:summary="@string/pref_custom_resolution_summary"
             android:key="@string/pref_custom_resolution_key"
             android:icon="@drawable/ic_baseline_edit_24" />
+        <Preference
+            android:title="@string/pref_saved_title"
+            android:summary="@string/pref_saved_summary"
+            android:key="@string/pref_saved_key"
+            android:icon="@drawable/ic_baseline_bookmarks_24" />
         <SwitchPreference
             android:title="@string/pref_verify_title"
             android:summary="@string/pref_verify_summary"

@@ -13,6 +13,7 @@ import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
 import com.draco.purr.R
 import com.draco.purr.viewmodels.SettingsPreferenceFragmentViewModel
+import com.draco.purr.views.SavedActivity
 import com.draco.purr.views.VerifyActivity
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -35,6 +36,10 @@ class SettingsPreferenceFragment : PreferenceFragmentCompat() {
         when (preference.key) {
             getString(R.string.pref_reset_resolution_key) -> viewModel.resetScale()
             getString(R.string.pref_custom_resolution_key) -> customResolution()
+            getString(R.string.pref_saved_key) -> {
+                val intent = Intent(requireContext(), SavedActivity::class.java)
+                startActivity(intent)
+            }
             getString(R.string.pref_developer_key) -> openURL(getString(R.string.developer_url))
             getString(R.string.pref_source_key) -> openURL(getString(R.string.source_url))
             getString(R.string.pref_contact_key) -> openURL(getString(R.string.contact_url))
@@ -58,15 +63,13 @@ class SettingsPreferenceFragment : PreferenceFragmentCompat() {
                     val width = it.findViewById<EditText>(R.id.width)!!.text.toString()
                     val height = it.findViewById<EditText>(R.id.height)!!.text.toString()
 
-                    if (sharedPreferences.getBoolean(getString(R.string.pref_verify_key), true) &&
-                            viewModel.applyResolutionStrings(width, height)) {
+                    if (viewModel.applyResolutionStrings(width, height) && sharedPreferences.getBoolean(getString(R.string.pref_verify_key), true)) {
                         val intent = Intent(requireContext(), VerifyActivity::class.java)
                         startActivity(intent)
                     }
                 }
             }
             .show()
-
     }
 
     private fun openURL(url: String) {
