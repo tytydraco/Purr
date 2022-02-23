@@ -27,7 +27,7 @@ class SavedActivity : AppCompatActivity() {
             val splits = it.split(";")
             val width = splits[0]
             val height = splits[1]
-            
+
             if (viewModel.applyResolutionStrings(width, height) && viewModel.sharedPreferences.getBoolean(getString(R.string.pref_verify_key), true)) {
                 val intent = Intent(this, VerifyActivity::class.java)
                 startActivity(intent)
